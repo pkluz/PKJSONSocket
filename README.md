@@ -1,6 +1,6 @@
 #PKJSONSocket
 
-PKJSONSocket aims to simplify network communications. It's a delightful wrapper around _CocoaAsyncSocket_, abstracting away complex data flow into an easy to use API. Instead of dealing with the bits and bytes yourself, PKJSONSocket offers you UTF-8 encoded JSON strings.
+PKJSONSocket aims to simplify network communications. It's a delightful wrapper around _[CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket)_, abstracting away complex data flow into an easy to use API. Instead of dealing with the bits and bytes yourself, PKJSONSocket offers you UTF-8 encoded JSON strings.
 
 ## Installation (CocoaPods)
 ```
@@ -11,32 +11,32 @@ pod 'PKJSONSocket'
 
 Simply `#import "PKJSONSocket.h"` and...
 
-
 - **Connect** to a remote host:
 
-    ```
+    ``` objective-c
     PKJSONSocket *socket = [PKJSONSocket socketWithDelegate:self];
     [socket connectToHost:@"127.0.0.1" onPort:3333 error:nil];
     ```
+    
 - **Listen** for incoming connections:
-    ```
+    ``` objective-c
     [socket listenOnPort:3333 error:nil];
-   	```
+    ```
 
 - Watch for **incoming data** by conforming to the `<PKJSONSocketDelegate>` protocol:
-
-    ```
+    ``` objective-c
     - (void)socket:(PKJSONSocket *)socket didReceiveMessage:(PKJSONSocketMessage *)message
     {
 		NSLog(@"Received Dictionary: %@", [message dictionaryRepresentation]);
     }
     ```
+    
 - **Send** messages down the wire:
-   ```
-   NSDictionary *dict = @{ @"message" : @"The answer is 42." };
-   PKJSONSocketMessage *msg = [PKJSONSocketMessage messageWithDictionary:dict];
-   [socket send:msg];
-   ```
+    ``` objective-c
+    NSDictionary *dict = @{ @"message" : @"The answer is 42." };
+    PKJSONSocketMessage *msg = [PKJSONSocketMessage messageWithDictionary:dict];
+    [socket send:msg];
+    ```
    
 **Note:** Do **NOT** use the same socket object to connect to remote hosts and listen for incoming connections. It will not work.
 
@@ -45,7 +45,7 @@ Simply `#import "PKJSONSocket.h"` and...
 - OS X 10.8 or later
 
 ## Todo
-- Wrap CocoaAsynSockets **SSL support** into an easy to use API.
+- Wrap CocoaAsynSocket's **SSL support** into an easy to use API.
 
 ## Changelog
 
