@@ -25,8 +25,8 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <CocoaAsyncSocket/GCDAsyncSocket.h>
 
+#import "GCDAsyncSocket.h"
 #import "PKJSONSocketDelegate.h"
 #import "PKJSONSocketMessage.h"
 
