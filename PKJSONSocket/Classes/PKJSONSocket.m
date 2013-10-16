@@ -1,6 +1,27 @@
 /*
-    PKJSONSocket > PKJSONSocket.h
+    PKJSONSocket > PKJSONSocket.m
     Copyright (c) 2013 zuui.org (Philip Kluz). All rights reserved.
+ 
+    The MIT License (MIT)
+ 
+    Copyright (c) 2013 Philip Kluz
+ 
+    Permission is hereby granted, free of charge, to any person obtaining a copy of
+    this software and associated documentation files (the "Software"), to deal in
+    the Software without restriction, including without limitation the rights to
+    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+    the Software, and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+ 
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+ 
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
 #import "PKJSONSocket.h"
@@ -13,14 +34,16 @@
 
 @implementation PKJSONSocket
 
-+ (instancetype)socketWithDelegate:(id)delegate
+#pragma mark - Initialization
+
++ (instancetype)socketWithDelegate:(id<PKJSONSocketDelegate>)delegate
 {
     return [[[self class] alloc] initWithDelegate:delegate];
 }
 
-+ (instancetype)socketWithInternalSocket:(GCDAsyncSocket *)socket
++ (instancetype)socketWithGCDAsyncSocket:(GCDAsyncSocket *)socket
 {
-    return [[[self class] alloc] initWithInternalSocket:socket];
+    return [[[self class] alloc] initWithGCDAsyncSocket:socket];
 }
 
 - (instancetype)initWithDelegate:(id<PKJSONSocketDelegate>)delegate
@@ -35,7 +58,7 @@
     return self;
 }
 
-- (instancetype)initWithInternalSocket:(GCDAsyncSocket *)socket
+- (instancetype)initWithGCDAsyncSocket:(GCDAsyncSocket *)socket
 {
     self = [super init];
     
@@ -46,6 +69,8 @@
     
     return self;
 }
+
+#pragma mark - API
 
 - (void)connectToHost:(NSString *)IP
                onPort:(uint16_t)port
@@ -61,8 +86,8 @@
 
 - (void)disconnect
 {
-    [self.internalSocket disconnect];
     self.internalSocket.delegate = nil;
+    [self.internalSocket disconnect];
     self.internalSocket = nil;
 }
 
@@ -81,9 +106,19 @@
     [self.internalSocket writeData:[message dataRepresentation]
                        withTimeout:-1
                                tag:0];
+    [self.internalSocket writeData:[GCDAsyncSocket CRLFData]
+                       withTimeout:-1
+                               tag:0];
 }
 
-- (void)read
+- (BOOL)isConnected
+{
+    return self.internalSocket.isConnected;
+}
+
+#pragma mark - Helper
+
+- (void)readNextMessage
 {
     [self.internalSocket readDataToData:[GCDAsyncSocket CRLFData]
                             withTimeout:-1
@@ -99,15 +134,17 @@
         return;
     }
     
-    PKJSONSocket *newSocket = [PKJSONSocket socketWithInternalSocket:newInternalSocket];
+    PKJSONSocket *newSocket = [PKJSONSocket socketWithGCDAsyncSocket:newInternalSocket];
     newInternalSocket.delegate = newSocket;
     
     if ([self.delegate respondsToSelector:@selector(socket:didAcceptNewSocket:)])
     {
-        [self.delegate socket:self didAcceptNewSocket:newSocket];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate socket:self didAcceptNewSocket:newSocket];
+        });
     }
     
-    [newSocket read];
+    [newSocket readNextMessage];
 }
 
 - (void)socket:(GCDAsyncSocket *)socket didConnectToHost:(NSString *)host port:(uint16_t)port
@@ -119,10 +156,12 @@
     
     if ([self.delegate respondsToSelector:@selector(socket:didConnectToHost:)])
     {
-        [self.delegate socket:self didConnectToHost:host];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate socket:self didConnectToHost:host];
+        });
     }
     
-    [self read];
+    [self readNextMessage];
 }
 
 - (void)socket:(GCDAsyncSocket *)socket didReadData:(NSData *)data withTag:(long)tag
@@ -144,7 +183,7 @@
         }
     });
     
-    [self read];
+    [self readNextMessage];
 }
 
 @end

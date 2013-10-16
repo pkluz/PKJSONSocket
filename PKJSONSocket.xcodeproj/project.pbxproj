@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6518FDF6204C44539E4FB2C6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E12AE81ECCD402FB35821E8 /* libPods.a */; };
+		27D2794EF9E648F2BCE028CB /* libPods-libPKJSONSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB6DE6C270A4364916656AA /* libPods-libPKJSONSocket.a */; };
+		4EDB417D0B9A417D8DD2BD66 /* libPods-PKJSONSocketFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEE8AD022C24324937D3D48 /* libPods-PKJSONSocketFramework.a */; };
 		F90833AF180EFD420018C44E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EBD9B2180EDFCD00711269 /* Foundation.framework */; };
 		F90833D1180EFE060018C44E /* PKJSONSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EBD9DF180EE15000711269 /* PKJSONSocket.m */; };
 		F90833D2180EFE080018C44E /* PKJSONSocketMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F90833A5180EFAC40018C44E /* PKJSONSocketMessage.m */; };
+		F9C1C3DD180F19D900A206AC /* PKJSONSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EBD9DF180EE15000711269 /* PKJSONSocket.m */; };
+		F9C1C3DE180F19DE00A206AC /* PKJSONSocketMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F90833A5180EFAC40018C44E /* PKJSONSocketMessage.m */; };
+		F9C1C3DF180F19E300A206AC /* PKJSONSocketMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = F90833A4180EFAC40018C44E /* PKJSONSocketMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9C1C3E0180F19E500A206AC /* PKJSONSocketDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = F9C1C3AE180F140D00A206AC /* PKJSONSocketDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9C1C3E1180F19EC00A206AC /* PKJSONSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = F9EBD9DE180EE15000711269 /* PKJSONSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,18 +32,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7E12AE81ECCD402FB35821E8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7EA97472A8E4A218454DA1B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		04B7905DF5DB45D09687075F /* Pods-libPKJSONSocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-libPKJSONSocket.xcconfig"; path = "Pods/Pods-libPKJSONSocket.xcconfig"; sourceTree = SOURCE_ROOT; };
+		23731CDA1D8549259486F68F /* Pods-PKJSONSocketFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PKJSONSocketFramework.xcconfig"; path = "Pods/Pods-PKJSONSocketFramework.xcconfig"; sourceTree = SOURCE_ROOT; };
+		8AEE8AD022C24324937D3D48 /* libPods-PKJSONSocketFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PKJSONSocketFramework.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90833A4180EFAC40018C44E /* PKJSONSocketMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKJSONSocketMessage.h; sourceTree = "<group>"; };
 		F90833A5180EFAC40018C44E /* PKJSONSocketMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKJSONSocketMessage.m; sourceTree = "<group>"; };
-		F90833AE180EFD420018C44E /* libPKJSONSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPKJSONSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F90833BE180EFD420018C44E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F90833AE180EFD420018C44E /* liblibPKJSONSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibPKJSONSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9C1C3AE180F140D00A206AC /* PKJSONSocketDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKJSONSocketDelegate.h; sourceTree = "<group>"; };
+		F9C1C3B4180F15FF00A206AC /* PKJSONSocketFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PKJSONSocketFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9EBD9B2180EDFCD00711269 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F9EBD9C3180EDFD000711269 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F9EBD9DE180EE15000711269 /* PKJSONSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKJSONSocket.h; sourceTree = "<group>"; };
 		F9EBD9DF180EE15000711269 /* PKJSONSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKJSONSocket.m; sourceTree = "<group>"; };
 		F9EBD9E1180EE15000711269 /* PKJSONSocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PKJSONSocket-Prefix.pch"; sourceTree = "<group>"; };
 		F9EBD9E3180EE15000711269 /* PKJSONSocket-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PKJSONSocket-Info.plist"; sourceTree = "<group>"; };
+		FDB6DE6C270A4364916656AA /* libPods-libPKJSONSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-libPKJSONSocket.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +55,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F90833AF180EFD420018C44E /* Foundation.framework in Frameworks */,
-				6518FDF6204C44539E4FB2C6 /* libPods.a in Frameworks */,
+				27D2794EF9E648F2BCE028CB /* libPods-libPKJSONSocket.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9C1C3B0180F15FF00A206AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EDB417D0B9A417D8DD2BD66 /* libPods-PKJSONSocketFramework.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,14 +76,16 @@
 				F9EBD9B4180EDFCD00711269 /* PKJSONSocket */,
 				F9EBD9B1180EDFCD00711269 /* Frameworks */,
 				F9EBD9B0180EDFCD00711269 /* Products */,
-				A7EA97472A8E4A218454DA1B /* Pods.xcconfig */,
+				23731CDA1D8549259486F68F /* Pods-PKJSONSocketFramework.xcconfig */,
+				04B7905DF5DB45D09687075F /* Pods-libPKJSONSocket.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
 		F9EBD9B0180EDFCD00711269 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F90833AE180EFD420018C44E /* libPKJSONSocket.a */,
+				F90833AE180EFD420018C44E /* liblibPKJSONSocket.a */,
+				F9C1C3B4180F15FF00A206AC /* PKJSONSocketFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,8 +95,8 @@
 			children = (
 				F9EBD9B2180EDFCD00711269 /* Foundation.framework */,
 				F9EBD9C3180EDFD000711269 /* XCTest.framework */,
-				F90833BE180EFD420018C44E /* UIKit.framework */,
-				7E12AE81ECCD402FB35821E8 /* libPods.a */,
+				8AEE8AD022C24324937D3D48 /* libPods-PKJSONSocketFramework.a */,
+				FDB6DE6C270A4364916656AA /* libPods-libPKJSONSocket.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,6 +116,7 @@
 			children = (
 				F9EBD9DE180EE15000711269 /* PKJSONSocket.h */,
 				F9EBD9DF180EE15000711269 /* PKJSONSocket.m */,
+				F9C1C3AE180F140D00A206AC /* PKJSONSocketDelegate.h */,
 				F90833A4180EFAC40018C44E /* PKJSONSocketMessage.h */,
 				F90833A5180EFAC40018C44E /* PKJSONSocketMessage.m */,
 			);
@@ -121,25 +141,57 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		F9C1C3B1180F15FF00A206AC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9C1C3DF180F19E300A206AC /* PKJSONSocketMessage.h in Headers */,
+				F9C1C3E0180F19E500A206AC /* PKJSONSocketDelegate.h in Headers */,
+				F9C1C3E1180F19EC00A206AC /* PKJSONSocket.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		F90833AD180EFD420018C44E /* PKJSONSocket */ = {
+		F90833AD180EFD420018C44E /* libPKJSONSocket */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F90833CB180EFD420018C44E /* Build configuration list for PBXNativeTarget "PKJSONSocket" */;
+			buildConfigurationList = F90833CB180EFD420018C44E /* Build configuration list for PBXNativeTarget "libPKJSONSocket" */;
 			buildPhases = (
-				5721BA557D1A4E2E86F05AFC /* Check Pods Manifest.lock */,
+				9344ADE179DD4F94B6E59845 /* Check Pods Manifest.lock */,
 				F90833AA180EFD420018C44E /* Sources */,
 				F90833AB180EFD420018C44E /* Frameworks */,
 				F90833AC180EFD420018C44E /* CopyFiles */,
-				FD492A814E30490FB34585CE /* Copy Pods Resources */,
+				184EFDACC292427B8A5992DE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PKJSONSocket;
+			name = libPKJSONSocket;
 			productName = PKJSONSocket;
-			productReference = F90833AE180EFD420018C44E /* libPKJSONSocket.a */;
+			productReference = F90833AE180EFD420018C44E /* liblibPKJSONSocket.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		F9C1C3B3180F15FF00A206AC /* PKJSONSocketFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9C1C3D7180F160000A206AC /* Build configuration list for PBXNativeTarget "PKJSONSocketFramework" */;
+			buildPhases = (
+				B98FA01259F645029BCDE216 /* Check Pods Manifest.lock */,
+				F9C1C3AF180F15FF00A206AC /* Sources */,
+				F9C1C3B0180F15FF00A206AC /* Frameworks */,
+				F9C1C3B1180F15FF00A206AC /* Headers */,
+				400ADD119AD34970B30FDA7F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PKJSONSocketFramework;
+			productName = PKJSONSocketFramework;
+			productReference = F9C1C3B4180F15FF00A206AC /* PKJSONSocketFramework.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -162,13 +214,42 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F90833AD180EFD420018C44E /* PKJSONSocket */,
+				F90833AD180EFD420018C44E /* libPKJSONSocket */,
+				F9C1C3B3180F15FF00A206AC /* PKJSONSocketFramework */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5721BA557D1A4E2E86F05AFC /* Check Pods Manifest.lock */ = {
+		184EFDACC292427B8A5992DE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-libPKJSONSocket-resources.sh\"\n";
+		};
+		400ADD119AD34970B30FDA7F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-PKJSONSocketFramework-resources.sh\"\n";
+		};
+		9344ADE179DD4F94B6E59845 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -182,19 +263,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 		};
-		FD492A814E30490FB34585CE /* Copy Pods Resources */ = {
+		B98FA01259F645029BCDE216 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -208,12 +289,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9C1C3AF180F15FF00A206AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9C1C3DE180F19DE00A206AC /* PKJSONSocketMessage.m in Sources */,
+				F9C1C3DD180F19D900A206AC /* PKJSONSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		F90833CC180EFD420018C44E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7EA97472A8E4A218454DA1B /* Pods.xcconfig */;
+			baseConfigurationReference = 04B7905DF5DB45D09687075F /* Pods-libPKJSONSocket.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/PKJSONSocket.dst;
@@ -231,7 +321,7 @@
 		};
 		F90833CD180EFD420018C44E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7EA97472A8E4A218454DA1B /* Pods.xcconfig */;
+			baseConfigurationReference = 04B7905DF5DB45D09687075F /* Pods-libPKJSONSocket.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/PKJSONSocket.dst;
@@ -240,6 +330,59 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F9C1C3D8180F160000A206AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23731CDA1D8549259486F68F /* Pods-PKJSONSocketFramework.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PKJSONSocket/Other Sources/PKJSONSocket-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PKJSONSocket/Resources/PKJSONSocket-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		F9C1C3D9180F160000A206AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23731CDA1D8549259486F68F /* Pods-PKJSONSocketFramework.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PKJSONSocket/Other Sources/PKJSONSocket-Prefix.pch";
+				INFOPLIST_FILE = "PKJSONSocket/Resources/PKJSONSocket-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
 		};
@@ -316,11 +459,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F90833CB180EFD420018C44E /* Build configuration list for PBXNativeTarget "PKJSONSocket" */ = {
+		F90833CB180EFD420018C44E /* Build configuration list for PBXNativeTarget "libPKJSONSocket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F90833CC180EFD420018C44E /* Debug */,
 				F90833CD180EFD420018C44E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9C1C3D7180F160000A206AC /* Build configuration list for PBXNativeTarget "PKJSONSocketFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9C1C3D8180F160000A206AC /* Debug */,
+				F9C1C3D9180F160000A206AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
