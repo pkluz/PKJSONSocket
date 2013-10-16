@@ -1,6 +1,6 @@
 /*
     PKJSONSocket > PKJSONSocketMessage.m
-      Copyright (c) 2013 zuui.org (Philip Kluz). All rights reserved.
+    Copyright (c) 2013 zuui.org (Philip Kluz). All rights reserved.
  */
 
 #import "PKJSONSocketMessage.h"

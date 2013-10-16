@@ -42,7 +42,6 @@
     if (self)
     {
         self.internalSocket = socket;
-        [socket synchronouslySetDelegate:self];
     }
     
     return self;
@@ -84,6 +83,13 @@
                                tag:0];
 }
 
+- (void)read
+{
+    [self.internalSocket readDataToData:[GCDAsyncSocket CRLFData]
+                            withTimeout:-1
+                                    tag:0];
+}
+
 #pragma mark - GCDAsyncSocketDelegate
 
 - (void)socket:(GCDAsyncSocket *)socket didAcceptNewSocket:(GCDAsyncSocket *)newInternalSocket
@@ -93,11 +99,15 @@
         return;
     }
     
+    PKJSONSocket *newSocket = [PKJSONSocket socketWithInternalSocket:newInternalSocket];
+    newInternalSocket.delegate = newSocket;
+    
     if ([self.delegate respondsToSelector:@selector(socket:didAcceptNewSocket:)])
     {
-        PKJSONSocket *newSocket = [PKJSONSocket socketWithInternalSocket:newInternalSocket];
         [self.delegate socket:self didAcceptNewSocket:newSocket];
     }
+    
+    [newSocket read];
 }
 
 - (void)socket:(GCDAsyncSocket *)socket didConnectToHost:(NSString *)host port:(uint16_t)port
@@ -112,9 +122,7 @@
         [self.delegate socket:self didConnectToHost:host];
     }
     
-    [self.internalSocket readDataToData:[GCDAsyncSocket CRLFData]
-                            withTimeout:-1
-                                    tag:0];
+    [self read];
 }
 
 - (void)socket:(GCDAsyncSocket *)socket didReadData:(NSData *)data withTag:(long)tag
@@ -136,9 +144,7 @@
         }
     });
     
-    [self.internalSocket readDataToData:[GCDAsyncSocket CRLFData]
-                            withTimeout:-1
-                                    tag:0];
+    [self read];
 }
 
 @end
