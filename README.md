@@ -25,9 +25,9 @@ Simply `#import "PKJSONSocket.h"` and...
 
 - Watch for **incoming data** by conforming to the `<PKJSONSocketDelegate>` protocol:
     ``` objective-c
-    - (void)socket:(PKJSONSocket *)socket didReceiveMessage:(PKJSONSocketMessage *)message
+    - (void)socket:(PKJSONSocket *)socket didReceiveMessage:(PKJSONSocketMessage *)msg
     {
-		NSLog(@"Received Dictionary: %@", [message dictionaryRepresentation]);
+		NSLog(@"Received: %@", [msg dictionaryRepresentation]);
     }
     ```
     
