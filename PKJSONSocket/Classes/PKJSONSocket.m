@@ -86,9 +86,7 @@
 
 - (void)disconnect
 {
-    self.internalSocket.delegate = nil;
     [self.internalSocket disconnect];
-    self.internalSocket = nil;
 }
 
 - (void)listenOnPort:(uint16_t)port error:(NSError *__autoreleasing *)error
@@ -175,6 +173,9 @@
     {
         [self.delegate socket:self didDisconnectWithError:error];
     }
+    
+    self.internalSocket.delegate = nil;
+    self.internalSocket = nil;
 }
 
 - (void)socket:(GCDAsyncSocket *)socket didReadData:(NSData *)data withTag:(long)tag
