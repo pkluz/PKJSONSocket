@@ -164,6 +164,19 @@
     [self readNextMessage];
 }
 
+- (void)socketDidDisconnect:(GCDAsyncSocket *)socket withError:(NSError *)error
+{
+    if (socket != self.internalSocket)
+    {
+        return;
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(socket:didDisconnectWithError:)])
+    {
+        [self.delegate socket:self didDisconnectWithError:error];
+    }
+}
+
 - (void)socket:(GCDAsyncSocket *)socket didReadData:(NSData *)data withTag:(long)tag
 {
     if (socket != self.internalSocket)

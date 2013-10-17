@@ -53,9 +53,9 @@
  This method is invoked on your delegate when the sockets connection is dropped.
  
  @param socket The relevant socket.
- @param host The host the socket had a connection to.
+ @param error Pointer to an error object containing more information regarding the disconnect.
  */
-- (void)socket:(PKJSONSocket *)socket didDisconnectFromHost:(NSString *)host;
+- (void)socket:(PKJSONSocket *)socket didDisconnectWithError:(NSError *)error;
 
 /*
  This method is invoked on your delegate whenever the socket receives a message.

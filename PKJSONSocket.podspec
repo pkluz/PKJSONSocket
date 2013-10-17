@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   
   spec.name = 'PKJSONSocket'
-  spec.version = '0.0.1'
+  spec.version = '0.0.2'
   spec.authors = { 'Philip Kluz' => 'philip.kluz@zuui.org' }
   spec.homepage = 'https://github.com/pkluz/PKJSONSocket'
   spec.summary = 'Simplified socket networking based on CocoaAsynSocket. Enabling direct JSON messaging between devices.'
