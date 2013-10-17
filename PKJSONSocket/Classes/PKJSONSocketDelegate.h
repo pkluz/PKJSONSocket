@@ -31,6 +31,7 @@
 
 @protocol PKJSONSocketDelegate <NSObject>
 
+@optional
 /*
  This method is invoked on your delegate whenever a listening (passive) socket accepts a new incoming
  connection. Please keep in mind that you need to retain the newSocket in some way or it'll be released.
