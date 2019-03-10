@@ -24,9 +24,9 @@
     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import CocoaAsyncSocket;
 
-#import "GCDAsyncSocket.h"
 #import "PKJSONSocketDelegate.h"
 #import "PKJSONSocketMessage.h"
 
